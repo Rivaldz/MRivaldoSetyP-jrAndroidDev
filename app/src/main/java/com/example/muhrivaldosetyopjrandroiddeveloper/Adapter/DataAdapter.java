@@ -1,9 +1,7 @@
 package com.example.muhrivaldosetyopjrandroiddeveloper.Adapter;
 
 import android.content.Context;
-import android.media.Image;
 import android.net.Uri;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.muhrivaldosetyopjrandroiddeveloper.Model.Contacts.GetData;
-//import com.example.muhrivaldosetyopjrandroiddeveloper.Model.Contacts.UserData;
 import com.example.muhrivaldosetyopjrandroiddeveloper.R;
 import com.squareup.picasso.Picasso;
 

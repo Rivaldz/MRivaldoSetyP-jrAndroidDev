@@ -4,13 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.muhrivaldosetyopjrandroiddeveloper.Adapter.DataAdapter;
 import com.example.muhrivaldosetyopjrandroiddeveloper.Model.Contacts.Data;
-import com.example.muhrivaldosetyopjrandroiddeveloper.Model.Contacts.GetData;
-//import com.example.muhrivaldosetyopjrandroiddeveloper.Model.Contacts.Success;
-//import com.example.muhrivaldosetyopjrandroiddeveloper.Model.Contacts.UserData;
 import com.example.muhrivaldosetyopjrandroiddeveloper.api.Interface;
 
 import retrofit2.Call;
@@ -57,5 +56,9 @@ public class AgenList extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void backClick(View view) {
+        startActivity(new Intent(AgenList.this,HomeActivity.class));
     }
 }
