@@ -3,20 +3,13 @@ package com.example.muhrivaldosetyopjrandroiddeveloper;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.muhrivaldosetyopjrandroiddeveloper.Model.Auth.Login;
-import com.example.muhrivaldosetyopjrandroiddeveloper.api.Client;
 import com.example.muhrivaldosetyopjrandroiddeveloper.api.Interface;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     Button submit;
@@ -31,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
         submit = findViewById(R.id.button);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
-
-        mApiInterface = Client.getClient().create(Interface.class);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
