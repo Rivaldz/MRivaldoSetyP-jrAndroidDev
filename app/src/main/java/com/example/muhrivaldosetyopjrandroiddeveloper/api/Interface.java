@@ -1,7 +1,10 @@
 package com.example.muhrivaldosetyopjrandroiddeveloper.api;
 
 import com.example.muhrivaldosetyopjrandroiddeveloper.Model.Contacts.Data;
+import com.example.muhrivaldosetyopjrandroiddeveloper.Model.Contacts.GetData;
 import com.example.muhrivaldosetyopjrandroiddeveloper.Model.ResponseData;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -10,6 +13,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface Interface {
+
     @GET("api/contacts")
     Call<Data> getDataUser();
 

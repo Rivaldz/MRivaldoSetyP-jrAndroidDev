@@ -26,13 +26,14 @@ public class AgenList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agen_list);
         rvAgentList = findViewById(R.id.rvAgenList);
+        rvAgentList.setLayoutManager(new LinearLayoutManager(this));
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         rvAgentList.setLayoutManager(layoutManager);
         rvAgentList.setHasFixedSize(true);
         getDataUser();
     }
 
-    void getDataUser(){
+     void getDataUser(){
         Retrofit retrofit = new Retrofit.Builder().baseUrl(Constant.BASEURLTONJOO).addConverterFactory(GsonConverterFactory.create()).build();
         Interface service = retrofit.create(Interface.class);
         Call<Data> getUserData = service.getDataUser();
