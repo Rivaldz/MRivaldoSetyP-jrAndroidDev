@@ -20,15 +20,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AgenList extends AppCompatActivity {
     RecyclerView rvAgentList;
-    public static final String BASE_URL = "https://private-anon-d737bb707d-recruitment.apiary-mock.com/api/contacts/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agen_list);
-
         rvAgentList = findViewById(R.id.rvAgenList);
-
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         rvAgentList.setLayoutManager(layoutManager);
         rvAgentList.setHasFixedSize(true);
@@ -36,10 +33,7 @@ public class AgenList extends AppCompatActivity {
     }
 
     void getDataUser(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(Constant.BASEURLTONJOO).addConverterFactory(GsonConverterFactory.create()).build();
         Interface service = retrofit.create(Interface.class);
         Call<Data> getUserData = service.getDataUser();
         getUserData.enqueue(new Callback<Data>() {
@@ -49,13 +43,11 @@ public class AgenList extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
                 rvAgentList.setAdapter(adapter);
             }
-
             @Override
             public void onFailure(Call<Data> call, Throwable t) {
                 t.printStackTrace();
             }
         });
-
     }
 
     public void backClick(View view) {
